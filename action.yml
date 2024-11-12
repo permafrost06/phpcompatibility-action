@@ -20,6 +20,10 @@ inputs:
     descriptions: 'Files only with this extension(s) will be tested'
     required: false,
     default: ''
+  ignore:
+    description: 'Ignore these files/folders'
+    required: false,
+    default: ''
 runs:
   using: 'composite'
   steps:
@@ -34,3 +38,4 @@ runs:
         TEST_VERSIONS: ${{ inputs.test-versions }}
         PATHS: ${{ inputs.paths }}
         EXTENSIONS: ${{ inputs.extensions }}
+        IGNORE: ${{ inputs.ignore }}
